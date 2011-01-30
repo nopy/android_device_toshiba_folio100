@@ -15,7 +15,7 @@
 # limitations under the License.
 
 VENDOR=nvidia
-DEVICE=harmony
+DEVICE=betelgeuse
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/$VENDOR/$DEVICE/$DEVICE-vendor-blobs.mk
 # Copyright (C) 2010 The Android Open Source Project
@@ -188,13 +188,31 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/tegrastats:system/bin/tegrastats
 
 # wifi/bt files for __DEVICE__
+#PRODUCT_COPY_FILES += \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/bluecore6.psr:system/etc/bluez/bluecore6.psr \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/fw_bcm4329.bin:system/lib/hw/wlan/fw_bcm4329.bin \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/BCM4329B1.hcd:system/lib/hw/wlan/BCM4329B1.hcd \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/nvram.txt:system/lib/hw/wlan/nvram.txt \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/fw_bcm4329_apsta.bin:system/lib/hw/wlan/fw_bcm4329_apsta.bin \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/bc_hciattach:system/bin/bc_hciattach
+#EOF
+
+#PRODUCT_COPY_FILES += \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/PS_ASIC.pst:system/wifi/ar3k/30101coex/PS_ASIC.pst \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/RamPatch.txt:system/wifi/ar3k/30101coex/RamPatch.txt \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/PS_ASIC.pst:system/wifi/ar3k/30101/PS_ASIC.pst \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/RamPatch.txt:system/wifi/ar3k/30101/RamPatch.txt \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/ar6000.ko:system/wifi/ar6000.ko \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/bdata.WB31.bin:system/wifi/ath6k/AR6003/hw2.0/bdata.WB31.bin \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/otp.bin.z77:system/wifi/ath6k/AR6003/hw2.0/otp.bin.z77 \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/athtcmd_ram.bin:system/wifi/ath6k/AR6003/hw2.0/athtcmd_ram.bin \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/athwlan.bin.z77:system/wifi/ath6k/AR6003/hw2.0/athwlan.bin.z77 \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/bdata.SD31.bin:system/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin \\
+#    vendor/__VENDOR__/__DEVICE__/proprietary/data.patch.bin:system/wifi/ath6k/AR6003/hw2.0/data.patch.bin \\
+#EOF
+
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/bluecore6.psr:system/etc/bluez/bluecore6.psr \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/fw_bcm4329.bin:system/lib/hw/wlan/fw_bcm4329.bin \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/BCM4329B1.hcd:system/lib/hw/wlan/BCM4329B1.hcd \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/nvram.txt:system/lib/hw/wlan/nvram.txt \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/fw_bcm4329_apsta.bin:system/lib/hw/wlan/fw_bcm4329_apsta.bin \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/bc_hciattach:system/bin/bc_hciattach
+    vendor/__VENDOR__/__DEVICE__/proprietary/akmd8975:system/bin/akmd8975
 EOF
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/$VENDOR/$DEVICE/$DEVICE-vendor.mk
