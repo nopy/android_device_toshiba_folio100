@@ -85,10 +85,12 @@ TARGET_PREBUILT_KERNEL := device/nvidia/betelgeuse/kernel
 ## This is for the Samsung Galaxy S.
 ## Feel free to tweak or remove this code.
 ## If you want to add/tweak a mount point, the BOARD_X_FILESYSTEM_OPTIONS are optional.
-#BOARD_DATA_DEVICE := /dev/block/mmcblk0p6
-#BOARD_DATA_FILESYSTEM := ext3
-#BOARD_CACHE_DEVICE := /dev/block/mmcblk0p2
-#BOARD_CACHE_FILESYSTEM := ext3
+BOARD_DATA_DEVICE := /dev/block/mmcblk0p6
+BOARD_DATA_FILESYSTEM := ext4
+BOARD_CACHE_DEVICE := /dev/block/mmcblk0p2
+BOARD_CACHE_FILESYSTEM := ext4
+#BOARD_MISC_DEVICE := /dev/block/mmcblk0p3
+#BOARD_MISC_FILESYSTEM := ext4
 #BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1
 #BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1p1
 #BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/mmcblk0p8

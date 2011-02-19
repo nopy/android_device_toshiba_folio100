@@ -13,6 +13,7 @@ loglevel 6
 
 # set variables
     export BOOTCLASSPATH /system/framework/core.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/core-junit.jar:/system/framework/com.tapntap.platform.jar:/system/framework/com.nvidia.graphics.jar
+    export EXTERNAL_STORAGE /mnt/sdcard
 
 on fs
 # Mount file systems
@@ -20,11 +21,12 @@ on fs
     mkdir /data 0771 system system
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
+#   mkdir /misc 0770 system misc
 #   mount ext2 /dev/block/mmcblk0p1 /system ro
     mount ext4 /dev/block/mmcblk0p1 /system wait ro data=ordered noauto_da_alloc
-    mount ext3 /dev/block/mmcblk0p6 /data rw nosuid nodev
-    mount ext3 /dev/block/mmcblk0p2 /cache rw nosuid nodev
-    mount ext3 /dev/block/mmcblk0p3 /misc rw nosuid nodev
+    mount ext4 /dev/block/mmcblk0p6 /data rw nosuid nodev
+    mount ext4 /dev/block/mmcblk0p2 /cache rw nosuid nodev
+#   mount ext4 /dev/block/mmcblk0p3 /misc rw nosuid nodev
 
     # Create dump dir and collect dumps.
     # Do this before we mount cache so eventually we can use cache for
@@ -44,6 +46,10 @@ on fs
     chmod 0640 /data/dontpanic/apanic_threads
 
     write /proc/apanic_console 1
+
+#    misc partition
+#    chown system misc /misc
+#    chmod 0770 /misc
 
 # create basic filesystem structure
     mkdir /data/misc 01771 system misc
@@ -123,9 +129,8 @@ on fs
     chown dhcp dhcp /data/misc/dhcp
     mkdir /data/misc/dhcpcd 0771 dhcp dhcp 
     chown dhcp dhcp /data/misc/dhcpcd
+    mkdir /data/system/wpa_supplicant 0770 wifi wifi
     setprop wifi.interface wlan0
-    mkdir /data/system/wpa_supplicant wifi wifi
-    chmod 0770 /data/system/wpa_supplicant
 
 # bluetooth permissions
     exec /system/bin/sleep 6
