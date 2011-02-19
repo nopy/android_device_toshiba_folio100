@@ -1,0 +1,8 @@
+# Aliases extracted from modules themselves.
+alias usb:v0525pA4A3d*dc*dsc*dp*ic*isc*ip* usbtest
+alias usb:v0525pA4A4d*dc*dsc*dp*ic*isc*ip* usbtest
+alias usb:v0525pA4A0d*dc*dsc*dp*ic*isc*ip* usbtest
+alias usb:vFFF0pFFF0d*dc*dsc*dp*ic*isc*ip* usbtest
+alias usb:v04B4p8613d*dc*dsc*dp*ic*isc*ip* usbtest
+alias usb:v0547p0080d*dc*dsc*dp*ic*isc*ip* usbtest
+alias usb:v0547p2235d*dc*dsc*dp*ic*isc*ip* usbtest
