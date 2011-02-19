@@ -18,6 +18,7 @@ TARGET_USES_OLD_LIBSENSORS_HAL := true
 BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvidia/betelgeuse/recovery/recovery_ui.c
 
 TARGET_NO_BOOTLOADER := true
+#TARGET_NO_RECOVERY := true
 TARGET_BOOTLOADER_BOARD_NAME := betelgeuse
 
 # use pre-kernel.35 vold usb mounting
@@ -31,14 +32,16 @@ BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
 BOARD_WLAN_DEVICE           := wlan0
 #WIFI_DRIVER_MODULE_PATH     := "/system/wifi/ar6000.ko"
-WIFI_DRIVER_MODULE_PATH     := "/system/lib/hw/wlan/ar6000.ko"
+WIFI_DRIVER_MODULE_PATH     := "/system/wifi/usbtest.ko"
+#WIFI_DRIVER_MODULE_PATH     := "/system/lib/hw/wlan/ar6000.ko"
 #WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/lib/hw/wlan/fw_bcm4329.bin nvram_path=/system/lib/hw/wlan/nvram.txt"
 #WIFI_DRIVER_MODULE_ARG      := "ifname=wlan0"
-WIFI_DRIVER_MODULE_ARG      := ""
-WIFI_DRIVER_MODULE_NAME     := "ar6000"
+#WIFI_DRIVER_MODULE_ARG      := ""
+#WIFI_DRIVER_MODULE_NAME     := "ar6000"
+WIFI_DRIVER_MODULE_NAME     := "usbtest"
 
 BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_CSR := true
+#BOARD_HAVE_BLUETOOTH_CSR := true
 
 #BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=ttyS0,115200n8 usbcore.old_scheme_first=1 cpuid=200102 devicetype=1002 btmac=9c5ed6131a00 tegraboot=nand mtdparts=tegra_nand:16384K@12032K(misc),16384K@62208K(recovery),16384K@79104K(boot),204800K@96000K(system),222464K@301312K(cache),4096K@7424K(bootbmp),32768K@28928K(logodata) androidboot.hardware=betelgeuse
 BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=ttyUSB0,115200n8 usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR androidboot.hardware=betelgeuse androidboot.console=ttyUSB0 init=/init

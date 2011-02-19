@@ -24,13 +24,49 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.usbmap:/system/lib/modules/2.6.32.9/modules.usbmap \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.inputmap:/system/lib/modules/2.6.32.9/modules.inputmap \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.softdep:/system/lib/modules/2.6.32.9/modules.softdep \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.symbols:/system/lib/modules/2.6.32.9/modules.symbols \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.isapnpmap:/system/lib/modules/2.6.32.9/modules.isapnpmap \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.alias:/system/lib/modules/2.6.32.9/modules.alias \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.ofmap:/system/lib/modules/2.6.32.9/modules.ofmap \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.order:/system/lib/modules/2.6.32.9/modules.order \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.alias.bin:/system/lib/modules/2.6.32.9/modules.alias.bin \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.symbols.bin:/system/lib/modules/2.6.32.9/modules.symbols.bin \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.ccwmap:/system/lib/modules/2.6.32.9/modules.ccwmap \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.dep:/system/lib/modules/2.6.32.9/modules.dep \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.ieee1394map:/system/lib/modules/2.6.32.9/modules.ieee1394map \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.dep.bin:/system/lib/modules/2.6.32.9/modules.dep.bin \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.devname:/system/lib/modules/2.6.32.9/modules.devname \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.seriomap:/system/lib/modules/2.6.32.9/modules.seriomap \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/modules.pcimap:/system/lib/modules/2.6.32.9/modules.pcimap \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/kernel/net/mac80211/mac80211.ko:/system/lib/modules/2.6.32.9/kernel/net/mac80211/mac80211.ko \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/kernel/net/wireless/cfg80211.ko:/system/lib/modules/2.6.32.9/kernel/net/wireless/cfg80211.ko \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/kernel/drivers/usb/misc/usbtest.ko:/system/lib/modules/2.6.32.9/kernel/drivers/usb/misc/usbtest.ko \
+    $(LOCAL_PATH)/modules/lib/2.6.32.9/kernel/drivers/scsi/scsi_wait_scan.ko:/system/lib/modules/2.6.32.9/kernel/drivers/scsi/scsi_wait_scan.ko
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/wifi2/net/wireless/lib80211_crypt_ccmp.ko:/system/wifi2/net/wireless/lib80211_crypt_ccmp.ko \
+    $(LOCAL_PATH)/wifi2/net/wireless/cfg80211.ko:/system/wifi2/net/wireless/cfg80211.ko \
+    $(LOCAL_PATH)/wifi2/net/wireless/lib80211_crypt_tkip.ko:/system/wifi2/net/wireless/lib80211_crypt_tkip.ko \
+    $(LOCAL_PATH)/wifi2/net/wireless/lib80211_crypt_wep.ko:/system/wifi2/net/wireless/lib80211_crypt_wep.ko \
+    $(LOCAL_PATH)/wifi2/drivers/staging/ath6kl/ath6kl.ko:/system/wifi2/drivers/staging/ath6kl/ath6kl.ko \
+    $(LOCAL_PATH)/wifi2/compat/compat.ko:/system/wifi2/compat/compat.ko \
+    $(LOCAL_PATH)/wifi2/compat/compat_firmware_class.ko:/system/wifi2/compat/compat_firmware_class.ko
+
+PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/ar6000.ko:system/lib/hw/wlan/ar6000.ko \
-    $(LOCAL_PATH)/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/wifi/dhcpcd.conf:/system/etc/dhcpcd/dhcpcd.conf \
+    $(LOCAL_PATH)/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/wifi/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
     $(LOCAL_PATH)/wifi/eeprom.data:system/lib/hw/wlan/eeprom.data \
     $(LOCAL_PATH)/wifi/eeprom.bin:system/lib/hw/wlan/eeprom.bin \
     $(LOCAL_PATH)/wifi/data.patch.hw2_0.bin:system/lib/hw/wlan/data.patch.hw2_0.bin \
-    $(LOCAL_PATH)/wifi/athwlan.bin.z77:system/lib/hw/wlan/athwlan.bin.z77
+    $(LOCAL_PATH)/wifi/athwlan.bin.z77:system/lib/hw/wlan/athwlan.bin.z77 \
+    $(LOCAL_PATH)/wifi/wpa_supplicant:system/wifi/wpa_supplicant \
+    $(LOCAL_PATH)/wifi/wpa_supplicant:system/bin/wpa_supplicant \
+    $(LOCAL_PATH)/wifi/wlan_tool:system/bin/wlan_tool \
+    $(LOCAL_PATH)/wifi/usbtest.ko:system/wifi/usbtest.ko
 
 $(call inherit-product-if-exists, vendor/nvidia/betelgeuse/betelgeuse-vendor.mk)
 
@@ -45,7 +81,8 @@ PRODUCT_PACKAGES += \
     lights.tegra \
     sensors.tegra \
     abtfilt \
-    wmiconfig
+    wmiconfig \
+    hostap
 
 # Use MDPI artwork
 PRODUCT_LOCALES += mdpi

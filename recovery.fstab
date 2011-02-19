@@ -6,5 +6,4 @@
 /misc		ext3		/dev/block/mmcblk0p3
 /recovery	mtd		recovery
 /sdcard		vfat		/dev/block/mmcblk1p1
-/emmc		vfat		/dev/block/mmcblk1p1
 /system		ext4		/dev/block/mmcblk0p1
