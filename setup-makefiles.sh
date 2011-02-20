@@ -198,17 +198,6 @@ PRODUCT_COPY_FILES += \\
 #EOF
 
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/PS_ASIC.pst:system/wifi/ar3k/30101coex/PS_ASIC.pst \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/RamPatch.txt:system/wifi/ar3k/30101coex/RamPatch.txt \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/PS_ASIC.pst:system/wifi/ar3k/30101/PS_ASIC.pst \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/RamPatch.txt:system/wifi/ar3k/30101/RamPatch.txt \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/ar6000.ko:system/wifi/ar6000.ko \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/bdata.WB31.bin:system/wifi/ath6k/AR6003/hw2.0/bdata.WB31.bin \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/otp.bin.z77:system/wifi/ath6k/AR6003/hw2.0/otp.bin.z77 \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/athtcmd_ram.bin:system/wifi/ath6k/AR6003/hw2.0/athtcmd_ram.bin \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/athwlan.bin.z77:system/wifi/ath6k/AR6003/hw2.0/athwlan.bin.z77 \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/bdata.SD31.bin:system/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/data.patch.bin:system/wifi/ath6k/AR6003/hw2.0/data.patch.bin \\
     vendor/__VENDOR__/__DEVICE__/proprietary/wmiconfig:system/bin/wmiconfig \\
     vendor/__VENDOR__/__DEVICE__/proprietary/hostapd_wps:system/bin/hostapd_wps \\
     vendor/__VENDOR__/__DEVICE__/proprietary/hostapd:system/bin/hostapd \\

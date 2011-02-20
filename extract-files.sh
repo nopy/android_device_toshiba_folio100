@@ -155,17 +155,6 @@ adb pull /system/bin/tegrastats ../../../vendor/$VENDOR/$DEVICE/proprietary
 #adb pull /system/lib/hw/wlan/fw_bcm4329_apsta.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
 #adb pull /system/bin/bc_hciattach ../../../vendor/$VENDOR/$DEVICE/proprietary
 
-adb pull /system/wifi/ar3k/30101coex/PS_ASIC.pst ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/wifi/ar3k/30101coex/RamPatch.txt ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/wifi/ar3k/30101/PS_ASIC.pst ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/wifi/ar3k/30101/RamPatch.txt ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/wifi/ath6k/AR6003/hw2.0/bdata.WB31.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/wifi/ath6k/AR6003/hw2.0/otp.bin.z77 ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/wifi/ath6k/AR6003/hw2.0/athtcmd_ram.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/wifi/ath6k/AR6003/hw2.0/athwlan.bin.z77 ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/wifi/ath6k/AR6003/hw2.0/data.patch.bin ../../../vendor/$VENDOR/$DEVICE/proprietary
-
 adb pull /system/bin/wmiconfig ../../../vendor/$VENDOR/$DEVICE/proprietary
 adb pull /system/bin/hostapd_wps ../../../vendor/$VENDOR/$DEVICE/proprietary
 adb pull /system/bin/hostapd ../../../vendor/$VENDOR/$DEVICE/proprietary

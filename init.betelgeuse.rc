@@ -120,6 +120,7 @@ on fs
 # wlan permissions
     mount ext4 /dev/block/mmcblk0p1 /system wait remount rw data=ordered noauto_da_alloc
     exec /system/bin/cp /system/wifi/wpa_supplicant /system/bin/
+    chmod 0775 /system/wifi/wpa_supplicant
     mount ext4 /dev/block/mmcblk0p1 /system wait remount ro data=ordered noauto_da_alloc
     insmod /system/wifi/ar6000.ko
     mkdir /data/misc/wifi 0771 wifi wifi  
@@ -129,7 +130,7 @@ on fs
     chown dhcp dhcp /data/misc/dhcp
     mkdir /data/misc/dhcpcd 0771 dhcp dhcp 
     chown dhcp dhcp /data/misc/dhcpcd
-    mkdir /data/system/wpa_supplicant 0770 wifi wifi
+    #mkdir /data/system/wpa_supplicant 0770 wifi wifi
     setprop wifi.interface wlan0
 
 # bluetooth permissions
