@@ -79,7 +79,7 @@ BOARD_HAS_NO_MISC_PARTITION := true
 # Indicate that the board has an Internal SD Card
 BOARD_HAS_SDCARD_INTERNAL := true
 
-TARGET_PREBUILT_KERNEL := device/nvidia/betelgeuse/kernel
+#TARGET_PREBUILT_KERNEL := device/nvidia/betelgeuse/kernel
 
 ## Below is a sample of how you can tweak the mount points using the board config.
 ## This is for the Samsung Galaxy S.
