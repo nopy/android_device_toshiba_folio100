@@ -1,10 +1,3 @@
-on boot
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
-    # basic network init
-    ifup lo
-    hostname localhost
-    domainname localdomain
-
 on init
 
 sysclktz 0
@@ -50,6 +43,9 @@ on fs
 #    misc partition
 #    chown system misc /misc
 #    chmod 0770 /misc
+
+on boot
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
 # create basic filesystem structure
     mkdir /data/misc 01771 system misc
@@ -112,6 +108,20 @@ on fs
     chmod 666 /dev/nvhost-isp
     chmod 666 /dev/nvhost-mpe
     chmod 666 /dev/nvhost-vi
+
+    #sensors
+    chown compass system /dev/akm8975_dev
+    chmod 666 /dev/akm8975_dev
+    chown compass system /dev/akm8975_aot
+    chmod 666 /dev/akm8975_aot
+
+    # make gsensor accessible
+    chmod 666 /dev/lsm303dlh_acc
+
+    # i2c-interface permissions        
+    chmod 666 /dev/i2c-0
+    chmod 666 /dev/i2c-1
+    chmod 666 /dev/i2c-3
 
     # camera
     chown media camera /dev/video0
