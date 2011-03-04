@@ -29,7 +29,7 @@ TARGET_NO_RADIOIMAGE := true
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION      := VER_0_6_X
+WPA_SUPPLICANT_VERSION      := VER_0_5_X
 BOARD_WLAN_DEVICE           := wlan0
 #WIFI_DRIVER_MODULE_PATH     := "/system/wifi/ar6000.ko"
 WIFI_DRIVER_MODULE_PATH     := "/system/wifi/usbtest.ko"
