@@ -106,6 +106,8 @@ adb pull /system/lib/hw/gralloc.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprie
 adb pull /system/lib/hw/overlay.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary
 adb pull /system/lib/hw/lights.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary
 adb pull /system/lib/hw/sensors.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary
+adb pull /system/lib/hw/hdmi.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary
+adb pull /system/lib/hw/dmi.tegra.so ../../../vendor/$VENDOR/$DEVICE/proprietary
 
 # Pull keychar files
 adb pull /system/usr/keychars/nvec_keyboard.kcm.bin ../../../vendor/$VENDOR/$DEVICE/proprietary

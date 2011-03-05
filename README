@@ -1,0 +1,5 @@
+edit vendor/cyanogen/products/AndroidProducts.mk amd add:
+$(LOCAL_DIR)/cyanogen_betelgeuse.mk
+
+edit vendor/cyanogen/vendorsetup.sh and add:
+add_lunch_combo cyanogen_betelgeuse-eng
