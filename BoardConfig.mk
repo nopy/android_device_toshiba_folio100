@@ -28,7 +28,7 @@ BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvidia/betelgeuse/recovery/reco
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-#WPA_SUPPLICANT_VERSION      := VER_0_6_X
+WPA_SUPPLICANT_VERSION      := VER_0_6_X
 BOARD_WLAN_DEVICE           := wlan0
 #WIFI_DRIVER_MODULE_PATH     := "/system/wifi/ar6000.ko"
 WIFI_DRIVER_MODULE_PATH     := "/system/wifi/usbtest.ko"
@@ -54,10 +54,13 @@ BOARD_PREBUILT_LIBAUDIO := true
 # Use dirty hack to allow froyo libaudio
 BOARD_USE_KINETO_COMPATIBILITY := true
 
+TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
+BOARD_NO_RGBX_8888 := true
 BOARD_EGL_CFG := device/nvidia/betelgeuse/egl.cfg
 
 # Enables Old Sensor Compatibility Seems To Cause CPU Lockup, New kernel may be required
 TARGET_USES_OLD_LIBSENSORS_HAL:=true
+TARGET_SENSORS_NO_OPEN_CHECK:=true
 
 # fix this up by examining /proc/mtd on a running device
 # dev:    size   erasesize  name
@@ -104,3 +107,6 @@ BOARD_CACHE_FILESYSTEM := ext4
 #BOARD_SYSTEM_DEVICE := /dev/block/mmcblk0p1
 #BOARD_SYSTEM_FILESYSTEM := ext4
 ##BOARD_SYSTEM_FILESYSTEM_OPTIONS := llw,check=no
+
+BOARD_VOLD_MAX_PARTITIONS := 8
+BOARD_FIRST_CAMERA_FRONT_FACING := true
