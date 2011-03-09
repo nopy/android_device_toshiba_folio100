@@ -1,3 +1,4 @@
+# Camera Setup
 USE_CAMERA_STUB := true
 BOARD_USE_FROYO_LIBCAMERA := true
 
@@ -12,20 +13,18 @@ TARGET_ARCH_VARIANT_CPU := cortex-a9
 TARGET_ARCH_VARIANT_FPU := vfpv3-d16
 TARGET_CPU_SMP := true
 TARGET_HAVE_TEGRA_ERRATA_657451 := true
-TARGET_USES_OLD_LIBSENSORS_HAL := true
-
-# custom recovery ui
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvidia/betelgeuse/recovery/recovery_ui.c
 
 TARGET_NO_BOOTLOADER := true
-#TARGET_NO_RECOVERY := true
 TARGET_BOOTLOADER_BOARD_NAME := betelgeuse
-
-# use pre-kernel.35 vold usb mounting
-BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 
 # Modem
 TARGET_NO_RADIOIMAGE := true
+
+# Use Old Style USB Mounting Untill we get kernel source
+BOARD_USE_USB_MASS_STORAGE_SWITCH := true
+
+# custom recovery ui
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvidia/betelgeuse/recovery/recovery_ui.c
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
@@ -57,6 +56,9 @@ BOARD_USE_KINETO_COMPATIBILITY := true
 
 BOARD_EGL_CFG := device/nvidia/betelgeuse/egl.cfg
 
+# Enables Old Sensor Compatibility Seems To Cause CPU Lockup, New kernel may be required
+TARGET_USES_OLD_LIBSENSORS_HAL:=true
+
 # fix this up by examining /proc/mtd on a running device
 # dev:    size   erasesize  name
 # mtd0: 01000000 00020000 "misc"
@@ -77,7 +79,7 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 BOARD_HAS_NO_MISC_PARTITION := true
 
 # Indicate that the board has an Internal SD Card
-BOARD_HAS_SDCARD_INTERNAL := true
+#BOARD_HAS_SDCARD_INTERNAL := true
 
 TARGET_PREBUILT_KERNEL := device/nvidia/betelgeuse/kernel
 
