@@ -31,6 +31,7 @@ adb pull /system/lib/libopencorehw.so ../../../vendor/$VENDOR/$DEVICE/proprietar
 adb pull /system/lib/omxplayer.so ../../../vendor/$VENDOR/$DEVICE/proprietary
 adb pull /system/lib/libhwmediarecorder.so ../../../vendor/$VENDOR/$DEVICE/proprietary
 adb pull /system/lib/libhwmediaplugin.so ../../../vendor/$VENDOR/$DEVICE/proprietary
+adb pull /system/lib/libgps.so ../../../vendor/$VENDOR/$DEVICE/proprietary
 
 # Pull needed NV libs
 adb pull /system/lib/libnvodm_dtvtuner.so ../../../vendor/$VENDOR/$DEVICE/proprietary
@@ -164,29 +165,5 @@ adb pull /system/etc/hostapd.conf ../../../vendor/$VENDOR/$DEVICE/proprietary
 
 # Sensors
 adb pull /system/bin/akmd8975 ../../../vendor/$VENDOR/$DEVICE/proprietary
-
-# Pull OMX libs
-adb pull /system/lib/libomx_aacdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libomx_amrdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libomx_amrenc_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libomx_avcdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libomx_m4vdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libomx_mp3dec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libomx_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libomx_wmadec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libomx_wmvdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/etc/pvplayer.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary
-
-# Pull Opencore libs
-adb pull /system/lib/libopencore_author.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libopencore_common.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libopencore_downloadreg.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libopencore_download.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libopencore_mp4localreg.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libopencore_mp4local.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libopencore_net_support.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libopencore_player.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libopencore_rtspreg.so ../../../vendor/$VENDOR/$DEVICE/proprietary
-adb pull /system/lib/libopencore_rtsp.so ../../../vendor/$VENDOR/$DEVICE/proprietary
 
 ./setup-makefiles.sh

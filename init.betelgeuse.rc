@@ -1,3 +1,10 @@
+on boot
+    mount debugfs /sys/kernel/debug /sys/kernel/debug
+    # basic network init
+    ifup lo
+    hostname localhost
+    domainname localdomain
+
 on init
 
 sysclktz 0
@@ -43,9 +50,6 @@ on fs
 #    misc partition
 #    chown system misc /misc
 #    chmod 0770 /misc
-
-on boot
-    mount debugfs /sys/kernel/debug /sys/kernel/debug
 
 # create basic filesystem structure
     mkdir /data/misc 01771 system misc
@@ -109,28 +113,14 @@ on boot
     chmod 666 /dev/nvhost-mpe
     chmod 666 /dev/nvhost-vi
 
-    #sensors
-    chown compass system /dev/akm8975_dev
-    chmod 666 /dev/akm8975_dev
-    chown compass system /dev/akm8975_aot
-    chmod 666 /dev/akm8975_aot
-
-    # make gsensor accessible
-    chmod 666 /dev/lsm303dlh_acc
-
-    # i2c-interface permissions        
-    chmod 666 /dev/i2c-0
-    chmod 666 /dev/i2c-1
-    chmod 666 /dev/i2c-3
-
     # camera
     chown media camera /dev/video0
     chmod 770 /dev/video0
 
 # wlan permissions
     mount ext4 /dev/block/mmcblk0p1 /system wait remount rw data=ordered noauto_da_alloc
-    chmod 0775 /system/wifi/wpa_supplicant
     exec /system/xbin/cp /system/wifi/wpa_supplicant /system/bin/
+    chmod 0775 /system/wifi/wpa_supplicant
     mount ext4 /dev/block/mmcblk0p1 /system wait remount ro data=ordered noauto_da_alloc
     insmod /system/wifi/ar6000.ko
     mkdir /data/misc/wifi 0771 wifi wifi  

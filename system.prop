@@ -23,19 +23,3 @@ dalvik.vm.heapsize=64m
 
 # Add external mount points
 #ro.additionalmounts=/mnt/emmc;/mnt/usbdisk
-#
-
-# Media properties ( from stock )
-ro.media.dec.vid.wmv.enabled=1
-ro.media.dec.aud.wma.enabled=1
-ro.media.enc.hprof.file.format=3gp
-ro.media.enc.hprof.aud.hz=44100
-ro.media.enc.hprof.aud.ch=2
-ro.media.enc.hprof.codec.aud=aac
-ro.media.enc.hprof.aud.bps=128000
-
-media.stagefright.enable-player=true
-media.stagefright.enable-meta=true
-media.stagefright.enable-scan=true
-media.stagefright.enable-http=true
-
