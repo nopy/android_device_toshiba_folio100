@@ -29,7 +29,7 @@ BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvidia/betelgeuse/recovery/reco
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION      := VER_0_5_X
+WPA_SUPPLICANT_VERSION      := VER_0_6_X
 BOARD_WLAN_DEVICE           := wlan0
 #WIFI_DRIVER_MODULE_PATH     := "/system/wifi/ar6000.ko"
 WIFI_DRIVER_MODULE_PATH     := "/system/wifi/usbtest.ko"
@@ -84,7 +84,7 @@ BOARD_HAS_NO_MISC_PARTITION := true
 # Indicate that the board has an Internal SD Card
 #BOARD_HAS_SDCARD_INTERNAL := true
 
-#TARGET_PREBUILT_KERNEL := device/nvidia/betelgeuse/kernel
+TARGET_PREBUILT_KERNEL := device/nvidia/betelgeuse/kernel
 
 ## Below is a sample of how you can tweak the mount points using the board config.
 ## This is for the Samsung Galaxy S.
