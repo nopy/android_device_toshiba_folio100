@@ -173,6 +173,8 @@ adb pull /system/lib/libomx_avcdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEV
 adb pull /system/lib/libomx_m4vdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
 adb pull /system/lib/libomx_mp3dec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
 adb pull /system/lib/libomx_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
+adb pull /system/lib/libomx_wmadec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
+adb pull /system/lib/libomx_wmvdec_sharedlibrary.so ../../../vendor/$VENDOR/$DEVICE/proprietary
 adb pull /system/etc/pvplayer.cfg ../../../vendor/$VENDOR/$DEVICE/proprietary
 
 # Pull Opencore libs
