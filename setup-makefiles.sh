@@ -120,10 +120,6 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/com.nvidia.display.jar:system/framework/com.nvidia.display.jar \\
     vendor/__VENDOR__/__DEVICE__/proprietary/com.nvidia.graphics.jar:system/framework/com.nvidia.graphics.jar
 
-# TnT framework files for __DEVICE__
-PRODUCT_COPY_FILES += \\
-vendor/__VENDOR__/__DEVICE__/proprietary/com.tapntap.platform.jar:system/framework/com.tapntap.platform.jar
-
 # EGL files for __DEVICE__
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/libEGL_tegra.so:system/lib/egl/libEGL_tegra.so \\
