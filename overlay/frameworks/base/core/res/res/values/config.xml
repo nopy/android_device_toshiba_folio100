@@ -75,5 +75,8 @@
 
     <!-- Component name of the service providing geocoder API support. -->
     <string name="config_geocodeProvider">com.google.android.location.GeocodeProvider</string>
-
+    
+    <!-- Configure rotary outer radius -->
+    <integer name="config_rotaryOuterRadiusDIP">1020</integer>
+    
 </resources>
