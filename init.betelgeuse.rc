@@ -159,6 +159,9 @@ on boot
     chmod 0777 /dev/ttyHS4
     chmod 0777 /dev/ttyS0
 
+# increase read throughput from sd card
+    write /sys/block/mmcblk0/bdi/read_ahead_kb 1024
+
 #do calibration when have file calibration.ini in sdcard
 #service TSCalibration /system/bin/TSCalibration
 #    user root
