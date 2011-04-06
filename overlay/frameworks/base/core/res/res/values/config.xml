@@ -78,5 +78,15 @@
     
     <!-- Configure rotary outer radius -->
     <integer name="config_rotaryOuterRadiusDIP">1020</integer>
+
+    <!-- toggles weather device is tablet or phone. right now,
+         tablets are know to have soft buttons, but phones have harware
+         buttons. this might change in the future - especially when the
+         honeycomb modifications become available for phones -->
+    <bool name="cm_default_is_tablet">true</bool>
+    <bool name="cm_default_has_soft_buttons">true</bool>
+    <bool name="cm_default_bottom_status_bar">true</bool>
+
+
     
 </resources>
