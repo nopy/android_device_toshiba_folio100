@@ -31,13 +31,10 @@ BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvidia/betelgeuse/recovery/reco
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
 WPA_SUPPLICANT_VERSION      := VER_0_6_X
 BOARD_WLAN_DEVICE           := wlan0
+# Let us use a fake driver as ar6000 may not be unloaded - it wont work afterwards
 #WIFI_DRIVER_MODULE_PATH     := "/system/wifi/ar6000.ko"
-WIFI_DRIVER_MODULE_PATH     := "/system/wifi/usbtest.ko"
-#WIFI_DRIVER_MODULE_PATH     := "/system/lib/hw/wlan/ar6000.ko"
-#WIFI_DRIVER_MODULE_ARG      := "firmware_path=/system/lib/hw/wlan/fw_bcm4329.bin nvram_path=/system/lib/hw/wlan/nvram.txt"
-#WIFI_DRIVER_MODULE_ARG      := "ifname=wlan0"
-#WIFI_DRIVER_MODULE_ARG      := ""
 #WIFI_DRIVER_MODULE_NAME     := "ar6000"
+WIFI_DRIVER_MODULE_PATH     := "/system/wifi/usbtest.ko"
 WIFI_DRIVER_MODULE_NAME     := "usbtest"
 
 BOARD_HAVE_BLUETOOTH := true
@@ -62,15 +59,6 @@ BOARD_EGL_CFG := device/nvidia/betelgeuse/egl.cfg
 # Enables Old Sensor Compatibility Seems To Cause CPU Lockup, New kernel may be required
 TARGET_USES_OLD_LIBSENSORS_HAL:=true
 
-# fix this up by examining /proc/mtd on a running device
-# dev:    size   erasesize  name
-# mtd0: 01000000 00020000 "misc"
-# mtd1: 01000000 00020000 "recovery"
-# mtd2: 01000000 00020000 "boot"
-# mtd3: 0c800000 00020000 "system"
-# mtd4: 0d940000 00020000 "cache"
-# mtd5: 00400000 00020000 "bootbmp"
-# mtd6: 02000000 00020000 "logodata"
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 5242880
@@ -86,27 +74,10 @@ BOARD_HAS_NO_MISC_PARTITION := true
 
 TARGET_PREBUILT_KERNEL := device/nvidia/betelgeuse/kernel
 
-## Below is a sample of how you can tweak the mount points using the board config.
-## This is for the Samsung Galaxy S.
-## Feel free to tweak or remove this code.
-## If you want to add/tweak a mount point, the BOARD_X_FILESYSTEM_OPTIONS are optional.
 BOARD_DATA_DEVICE := /dev/block/mmcblk0p6
 BOARD_DATA_FILESYSTEM := ext4
 BOARD_CACHE_DEVICE := /dev/block/mmcblk0p2
 BOARD_CACHE_FILESYSTEM := ext4
-#BOARD_MISC_DEVICE := /dev/block/mmcblk0p3
-#BOARD_MISC_FILESYSTEM := ext4
-#BOARD_SDCARD_DEVICE_PRIMARY := /dev/block/mmcblk1
-#BOARD_SDCARD_DEVICE_SECONDARY := /dev/block/mmcblk1p1
-#BOARD_SDCARD_DEVICE_INTERNAL := /dev/block/mmcblk0p8
-#BOARD_SDEXT_DEVICE := /dev/block/mmcblk1p2
-##BOARD_HAS_DATADATA := true
-##BOARD_DATADATA_DEVICE := /dev/block/stl10
-##BOARD_DATADATA_FILESYSTEM := auto
-##BOARD_DATADATA_FILESYSTEM_OPTIONS := llw,check=no,nosuid,nodev
-#BOARD_SYSTEM_DEVICE := /dev/block/mmcblk0p1
-#BOARD_SYSTEM_FILESYSTEM := ext4
-##BOARD_SYSTEM_FILESYSTEM_OPTIONS := llw,check=no
 
 BOARD_VOLD_MAX_PARTITIONS := 8
 BOARD_FIRST_CAMERA_FRONT_FACING := true
