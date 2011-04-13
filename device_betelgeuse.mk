@@ -68,6 +68,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/media_profiles.xml:system/etc/media_profiles.xml
 
+# init.d script
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/etc/99postboot:system/etc/init.d/99postboot
+
 # Kernel
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/nvidia/betelgeuse/kernel

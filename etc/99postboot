@@ -1,0 +1,5 @@
+#!/system/bin/sh
+
+echo "on" > /sys/devices/platform/tegra-ehci.2/usb2/2-1/power/level
+echo "on" > /sys/devices/platform/tegra-ehci.2/usb2/2-1/2-1.2/power/level
+
