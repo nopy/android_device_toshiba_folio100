@@ -24,16 +24,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi2/net/wireless/lib80211_crypt_ccmp.ko:/system/wifi2/net/wireless/lib80211_crypt_ccmp.ko \
-    $(LOCAL_PATH)/wifi2/net/wireless/cfg80211.ko:/system/wifi2/net/wireless/cfg80211.ko \
-    $(LOCAL_PATH)/wifi2/net/wireless/lib80211_crypt_tkip.ko:/system/wifi2/net/wireless/lib80211_crypt_tkip.ko \
-    $(LOCAL_PATH)/wifi2/net/wireless/lib80211_crypt_wep.ko:/system/wifi2/net/wireless/lib80211_crypt_wep.ko \
-    $(LOCAL_PATH)/wifi2/drivers/staging/ath6kl.ko:/system/wifi2/drivers/staging/ath6kl.ko \
-    $(LOCAL_PATH)/wifi2/compat/compat.ko:/system/wifi2/compat/compat.ko \
-    $(LOCAL_PATH)/wifi2/compat/compat_firmware_class.ko:/system/wifi2/compat/compat_firmware_class.ko \
-    $(LOCAL_PATH)/wifi2/load.sh:/system/wifi2/load.sh
-
-PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/ar6000.ko:system/lib/hw/wlan/ar6000.ko \
     $(LOCAL_PATH)/wifi/wpa_supplicant:system/wifi/wpa_supplicant \
     $(LOCAL_PATH)/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
