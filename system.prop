@@ -22,8 +22,7 @@ dalvik.vm.heapsize=64m
 #ro.phone_storage = 1
 
 # Add external mount points
-#ro.additionalmounts=/mnt/emmc;/mnt/usbdisk
-#
+ro.additionalmounts=/mnt/sdcard/sdcard-disk0;/mnt/sdcard/usb-disk0
 
 # Media properties ( from stock )
 ro.media.dec.vid.wmv.enabled=1
