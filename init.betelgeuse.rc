@@ -19,8 +19,7 @@ on fs
 #   mount ext4 /dev/block/mmcblk0p1 /system wait ro data=ordered noauto_da_alloc
 #   mount ext4 /dev/block/mmcblk0p6 /data rw nosuid nodev
 #   mount ext4 /dev/block/mmcblk0p2 /cache rw nosuid nodev
-#   mount ext4 /dev/block/mmcblk0p3 /misc rw nosuid nodev
-wait noatime
+#   mount ext4 /dev/block/mmcblk0p3 /misc rw nosuid nodev wait noatime
     mount ext4 /dev/block/mmcblk0p1 /system wait ro
     mount ext4 /dev/block/mmcblk0p6 /data rw wait noatime nosuid nodev
     mount ext4 /dev/block/mmcblk0p2 /cache rw wait noatime nosuid nodev
@@ -51,6 +50,12 @@ wait noatime
 
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
+
+# create mount points for sdcard and usbflash
+    mount ext4 /dev/block/mmcblk0p8 /mnt/sdcard rw wait noatime nosuid nodev
+    mkdir /mnt/sdcard/sdcard-disk0
+    mkdir /mnt/sdcard/usb-disk0
+    exec /system/xbin/umount /mnt/sdcard
 
 # create basic filesystem structure
     mkdir /data/misc 01771 system misc
