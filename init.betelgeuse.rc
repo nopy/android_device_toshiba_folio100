@@ -52,7 +52,7 @@ on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
 # create mount points for sdcard and usbflash
-    mount ext4 /dev/block/mmcblk0p8 /mnt/sdcard rw wait noatime nosuid nodev
+    mount vfat /dev/block/mmcblk0p8 /mnt/sdcard rw wait noatime nosuid nodev
     mkdir /mnt/sdcard/sdcard-disk0
     mkdir /mnt/sdcard/usb-disk0
     exec /system/xbin/umount /mnt/sdcard
