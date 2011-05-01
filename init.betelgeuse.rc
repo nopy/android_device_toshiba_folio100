@@ -134,11 +134,11 @@ on boot
 
 # wlan permissions
     #mount ext4 /dev/block/mmcblk0p1 /system wait remount rw data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p1 /system wait rw
+    mount ext4 /dev/block/mmcblk0p1 /system wait remount rw
     chmod 0775 /system/wifi/wpa_supplicant
     exec /system/xbin/cp /system/wifi/wpa_supplicant /system/bin/
     #mount ext4 /dev/block/mmcblk0p1 /system wait remount ro data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p1 /system wait ro
+    mount ext4 /dev/block/mmcblk0p1 /system wait remount ro
     insmod /system/wifi/ar6000.ko
     mkdir /data/misc/wifi 0771 wifi wifi  
     mkdir /data/misc/wifi/sockets 0771 wifi wifi 
