@@ -1,4 +1,2 @@
 kernel/drivers/scsi/scsi_wait_scan.ko
 kernel/drivers/usb/misc/usbtest.ko
-kernel/net/wireless/cfg80211.ko
-kernel/net/mac80211/mac80211.ko
