@@ -20,6 +20,7 @@ on fs
     mount ext4 /dev/block/mmcblk0p6 /data rw nosuid nodev
     mount ext4 /dev/block/mmcblk0p2 /cache rw nosuid nodev
 #   mount ext4 /dev/block/mmcblk0p3 /misc rw nosuid nodev
+    mount debugfs debugfs /sys/kernel/debug
 
     # Create dump dir and collect dumps.
     # Do this before we mount cache so eventually we can use cache for
