@@ -174,6 +174,10 @@ on boot
 # increase read throughput from sd card
     write /sys/block/mmcblk0/bdi/read_ahead_kb 1024
 
+# hack to enable usb
+    write /sys/devices/platform/tegra-ehci.2/usb2/2-1/power/level on
+    write /sys/devices/platform/tegra-ehci.2/usb2/2-1/2-1.2/power/level on
+
 #do calibration when have file calibration.ini in sdcard
 #service TSCalibration /system/bin/TSCalibration
 #    user root
