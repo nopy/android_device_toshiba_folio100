@@ -15,14 +15,10 @@ on fs
     mkdir /cache 0770 system cache
     mkdir /devlog 0700 root root
 #   mkdir /misc 0770 system misc
-#   mount ext2 /dev/block/mmcblk0p1 /system ro
-#   mount ext4 /dev/block/mmcblk0p1 /system wait ro data=ordered noauto_da_alloc
-#   mount ext4 /dev/block/mmcblk0p6 /data rw nosuid nodev
-#   mount ext4 /dev/block/mmcblk0p2 /cache rw nosuid nodev
-#   mount ext4 /dev/block/mmcblk0p3 /misc rw nosuid nodev wait noatime
-    mount ext4 /dev/block/mmcblk0p1 /system wait ro
-    mount ext4 /dev/block/mmcblk0p6 /data rw wait noatime nosuid nodev
-    mount ext4 /dev/block/mmcblk0p2 /cache rw wait noatime nosuid nodev
+#   Maybe we should also add data=ordered ?
+    mount ext4 /dev/block/mmcblk0p1 /system wait ro barrier=1
+    mount ext4 /dev/block/mmcblk0p6 /data noatime nosuid nodev barrier=1 noauto_da_alloc
+    mount ext4 /dev/block/mmcblk0p2 /cache wait noatime nosuid nodev barrier=1
     mount debugfs debugfs /sys/kernel/debug
 
     # Create dump dir and collect dumps.
@@ -138,12 +134,10 @@ on boot
     chmod 770 /dev/video0
 
 # wlan permissions
-    #mount ext4 /dev/block/mmcblk0p1 /system wait remount rw data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p1 /system wait remount rw
+    mount ext4 /dev/block/mmcblk0p1 /system wait remount rw barrier=1
     chmod 0775 /system/wifi/wpa_supplicant
     exec /system/xbin/cp /system/wifi/wpa_supplicant /system/bin/
-    #mount ext4 /dev/block/mmcblk0p1 /system wait remount ro data=ordered noauto_da_alloc
-    mount ext4 /dev/block/mmcblk0p1 /system wait remount ro
+    mount ext4 /dev/block/mmcblk0p1 /system wait remount ro barrier=1
     insmod /system/wifi/ar6000.ko
     mkdir /data/misc/wifi 0771 wifi wifi  
     mkdir /data/misc/wifi/sockets 0771 wifi wifi 
