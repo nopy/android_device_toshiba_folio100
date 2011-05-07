@@ -73,6 +73,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/etc/99postboot:system/etc/init.d/99postboot
 
 # Kernel
+ifndef BUILD_KERNEL
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/nvidia/betelgeuse/kernel
 else
@@ -81,6 +82,7 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
+endif
 
 # Set property overrides
 PRODUCT_PROPERTY_OVERRIDES += \
