@@ -24,6 +24,9 @@ dalvik.vm.heapsize=64m
 # Add external mount points
 ro.additionalmounts=/mnt/sdcard/sdcard-disk0;/mnt/sdcard/usb-disk0
 
+# We have no GSM
+ro.telephony.default_network=0
+
 # Media properties ( from stock )
 ro.media.dec.vid.wmv.enabled=1
 ro.media.dec.aud.wma.enabled=1
