@@ -52,6 +52,7 @@ PRODUCT_PACKAGES += \
     overlay.tegra \
     lights.tegra \
     sensors.tegra \
+    screencap \
     abtfilt \
     wmiconfig \
     hostap
