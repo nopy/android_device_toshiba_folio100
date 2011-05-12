@@ -41,3 +41,5 @@ media.stagefright.enable-meta=true
 media.stagefright.enable-scan=true
 media.stagefright.enable-http=true
 
+# Fix for some apps
+ro.kernel.android.checkjni=0
