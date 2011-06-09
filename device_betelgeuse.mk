@@ -3,7 +3,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # Get a proper init file
 PRODUCT_COPY_FILES += \
     device/nvidia/betelgeuse/init.betelgeuse.rc:root/init.betelgeuse.rc \
-    device/nvidia/betelgeuse/ueventd.betelgeuse.rc:root/ueventd.betelgeuse.rc
+    device/nvidia/betelgeuse/ueventd.tegra.rc:root/ueventd.tegra.rc
 
 # Place wifi files
 #PRODUCT_COPY_FILES += \
