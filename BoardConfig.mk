@@ -85,3 +85,6 @@ BOARD_FIRST_CAMERA_FRONT_FACING := true
 # Enabled For HW Video Decoding
 TARGET_OVERLAY_ALWAYS_DETERMINES_FORMAT := true
 TARGET_USE_SOFTWARE_AUDIO_AAC := true
+
+# Use screencap to capture frame buffer for ddms
+BOARD_USE_SCREENCAP := true
