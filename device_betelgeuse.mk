@@ -2,7 +2,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Get a proper init file
 PRODUCT_COPY_FILES += \
-    device/nvidia/betelgeuse/init.betelgeuse.rc:root/init.betelgeuse.rc
+    device/nvidia/betelgeuse/init.betelgeuse.rc:root/init.betelgeuse.rc \
+    device/nvidia/betelgeuse/ueventd.tegra.rc:root/ueventd.tegra.rc
 
 # Place wifi files
 #PRODUCT_COPY_FILES += \
@@ -73,6 +74,7 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/etc/99postboot:system/etc/init.d/99postboot
 
 # Kernel
+ifndef BUILD_KERNEL
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/nvidia/betelgeuse/kernel
 else
@@ -81,6 +83,7 @@ endif
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
+endif
 
 # Set property overrides
 PRODUCT_PROPERTY_OVERRIDES += \
