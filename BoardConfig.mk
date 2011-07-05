@@ -51,6 +51,9 @@ BOARD_PREBUILT_LIBAUDIO := true
 
 # Use dirty hack to allow froyo libaudio
 BOARD_USE_KINETO_COMPATIBILITY := true
+BOARD_USES_FROYO_AUDIOPOLICY := true
+
+
 
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 BOARD_NO_RGBX_8888 := true
