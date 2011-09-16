@@ -1,1 +1,4 @@
 /dev/video0		0770	media  camera
+/dev/ttyUSB0		0770	radio  radio
+/dev/ttyUSB1		0770	radio  radio
+/dev/ttyUSB2		0770	radio  radio
