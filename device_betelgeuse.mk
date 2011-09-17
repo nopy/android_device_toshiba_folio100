@@ -5,6 +5,11 @@ PRODUCT_COPY_FILES += \
     device/nvidia/betelgeuse/init.betelgeuse.rc:root/init.betelgeuse.rc \
     device/nvidia/betelgeuse/ueventd.tegra.rc:root/ueventd.tegra.rc
 
+# Some files for 3G
+PRODUCT_COPY_FILES += \
+    device/nvidia/betelgeuse/etc/ppp/ip-up:system/etc/ppp/ip-up \
+    device/nvidia/betelgeuse/etc/ppp/ip-down:system/etc/ppp/ip-down
+
 # Place wifi files
 #PRODUCT_COPY_FILES += \
 #    device/nvidia/betelgeuse/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \

@@ -102,6 +102,10 @@ on boot
     mkdir /mnt/sdcard/usb-disk0
     exec /system/xbin/umount /mnt/sdcard
 
+# create dir for Huawei 3G
+    mkdir /data/ppp
+    chown radio radio /data/ppp
+
 # set RLIMIT_NICE to allow priorities from 19 to -20
     setrlimit 13 40 40
 
