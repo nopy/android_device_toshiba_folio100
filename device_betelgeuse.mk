@@ -41,7 +41,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin:/system/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin \
     $(LOCAL_PATH)/wifi/ath6k/AR6003/hw2.0/bdata.WB31.bin:/system/wifi/ath6k/AR6003/hw2.0/bdata.WB31.bin \
     $(LOCAL_PATH)/wifi/libhuawei-ril.so:/system/lib/libhuawei-ril.so \
-    $(LOCAL_PATH)/initlogo.rle:root/initlogo.rle
+    $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
+    $(LOCAL_PATH)/ramdisk/initlogo.rle:root/initlogo.rle
 
 $(call inherit-product-if-exists, vendor/nvidia/betelgeuse/betelgeuse-vendor.mk)
 
