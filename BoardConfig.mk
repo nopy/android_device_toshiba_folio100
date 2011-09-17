@@ -51,7 +51,7 @@ BOARD_PREBUILT_LIBAUDIO := true
 
 # Use dirty hack to allow froyo libaudio
 BOARD_USE_KINETO_COMPATIBILITY := true
-BOARD_USES_FROYO_AUDIOPOLICY := true
+#BOARD_USES_FROYO_AUDIOPOLICY := true
 
 
 
@@ -88,6 +88,9 @@ BOARD_FIRST_CAMERA_FRONT_FACING := true
 # Enabled For HW Video Decoding
 TARGET_OVERLAY_ALWAYS_DETERMINES_FORMAT := true
 TARGET_USE_SOFTWARE_AUDIO_AAC := true
+
+# Enabled for HW video recording
+BOARD_USES_HW_MEDIARECORDER := true
 
 # Use screencap to capture frame buffer for ddms
 BOARD_USE_SCREENCAP := true
