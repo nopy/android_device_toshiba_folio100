@@ -68,6 +68,10 @@ PRODUCT_LOCALES += mdpi
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/etc/vold.betelgeuse.fstab:system/etc/vold.fstab
 
+# APNs
+PRODUCT_COPY_FILES += \
+	vendor/cyanogen/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+
 # Media Profile
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/etc/media_profiles.xml:system/etc/media_profiles.xml
