@@ -51,7 +51,7 @@ BOARD_PREBUILT_LIBAUDIO := true
 
 # Use dirty hack to allow froyo libaudio
 BOARD_USE_KINETO_COMPATIBILITY := true
-#BOARD_USES_FROYO_AUDIOPOLICY := true
+BOARD_USES_FROYO_AUDIOPOLICY := true
 
 
 
