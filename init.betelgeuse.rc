@@ -351,12 +351,6 @@ service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL wlan0
     disabled
     oneshot
 
-service ril-daemon /system/bin/rild -l libhuawei-ril.so -- -d /dev/ttyUSB2
-    socket rild stream 660 root radio
-    socket rild-debug stream 660 radio system
-    user root
-    group radio cache inet misc audio
-
 #service dhcpcd /system/bin/dhcpcd -dd -f /system/etc/dhcpcd/dhcpcd.conf wlan0
 #    user root
 #    group dhcp inet
