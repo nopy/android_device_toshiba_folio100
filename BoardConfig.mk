@@ -1,6 +1,7 @@
 # Camera Setup
 USE_CAMERA_STUB := true
 BOARD_USE_FROYO_LIBCAMERA := true
+BOARD_FIRST_CAMERA_FRONT_FACING := true
 
 # inherit from the proprietary version
 -include vendor/nvidia/betelgeuse/BoardConfigVendor.mk
@@ -84,7 +85,6 @@ BOARD_CACHE_DEVICE := /dev/block/mmcblk0p2
 BOARD_CACHE_FILESYSTEM := ext4
 
 BOARD_VOLD_MAX_PARTITIONS := 8
-BOARD_FIRST_CAMERA_FRONT_FACING := true
 
 # Enabled For HW Video Decoding
 TARGET_OVERLAY_ALWAYS_DETERMINES_FORMAT := true
