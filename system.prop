@@ -28,7 +28,7 @@ dalvik.vm.dexopt-flags=m=y,u=n
 ro.additionalmounts=/mnt/sdcard/sdcard-disk0;/mnt/sdcard/usb-disk0
 
 # We have no GSM
-#ro.telephony.default_network=0
+ro.telephony.default_network=0
 
 # Media properties ( from stock )
 ro.media.dec.vid.wmv.enabled=1
