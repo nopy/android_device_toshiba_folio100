@@ -1,4 +1,14 @@
+$(call inherit-product, build/target/product/small_base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
+PRODUCT_NAME := full_betelgeuse
+PRODUCT_DEVICE := betelgeuse
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    dalvik.vm.heapsize=32m \
+    ro.com.google.locationfeatures=1 \
+    ro.com.google.networklocation=1 \
+    dalvik.vm.dexopt-data-only=1
 
 # Get a proper init file
 PRODUCT_COPY_FILES += \
@@ -19,12 +29,14 @@ PRODUCT_COPY_FILES += \
 # Place permission files
 PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
     frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
     frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
-    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
+    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/base/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
     $(LOCAL_PATH)/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml
 
@@ -98,16 +110,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 endif
 
-# Set property overrides
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.google.locationfeatures=1 \
-    ro.com.google.networklocation=1 \
-    ro.setupwizard.enable_bypass=1
-
-$(call inherit-product, build/target/product/full.mk)
+#$(call inherit-product, build/target/product/full.mk)
 # Added all the kernel modules to be copyed
 $(call inherit-product-if-exists, device/nvidia/betelgeuse/KernelModules.mk)
-
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-PRODUCT_NAME := full_betelgeuse
-PRODUCT_DEVICE := betelgeuse
