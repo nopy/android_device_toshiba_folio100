@@ -353,7 +353,7 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wi
     oneshot
     disabled
 
-service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL wlan0
+service dhcpcd_wlan0 /system/bin/dhcpcd -dd -f /system/etc/dhcpcd/dhcpcd.conf wlan0
     disabled
     oneshot
 
