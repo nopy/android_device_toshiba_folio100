@@ -281,6 +281,8 @@ chown system system /sys/class/leds/red/device/grpfreq
     mount ext4 /dev/block/mmcblk0p1 /system wait remount rw barrier=1
     chmod 0775 /system/wifi/wpa_supplicant
     exec /system/xbin/cp /system/wifi/wpa_supplicant /system/bin/
+# delete DSPManager
+    exec /system/xbin/rm /system/app/DSPManager.apk
     mount ext4 /dev/block/mmcblk0p1 /system wait remount ro barrier=1
     insmod /system/wifi/ar6000.ko
     mkdir /data/misc/wifi 0771 wifi wifi  
