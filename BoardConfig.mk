@@ -95,3 +95,5 @@ BOARD_USES_HW_MEDIARECORDER := true
 
 # Use screencap to capture frame buffer for ddms
 BOARD_USE_SCREENCAP := true
+
+BOARD_CUSTOM_BLUEDROID := ../../../device/nvidia/betelgeuse/bluedroid/bluetooth.c
