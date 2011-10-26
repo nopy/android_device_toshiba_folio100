@@ -150,10 +150,10 @@ PRODUCT_COPY_FILES += \\
 
 # Keylayout files for __DEVICE__
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/nvec_keyboard.kl:system/usr/keylayout/nvec_keyboard.kl \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/tegra-kbc.kl:system/usr/keylayout/tegra-kbc.kl \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/usb_keyboard_102_en_us.kl:system/usr/keylayout/usb_keyboard_102_en_us.kl
+    vendor/__VENDOR__/__DEVICE__/proprietary/gpio-keys.kl:system/usr/keychars/gpio-keys.kl \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/nvec_keyboard.kl:system/usr/keychars/nvec_keyboard.kl \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/tegra-kbc.kl:system/usr/keychars/tegra-kbc.kl \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/usb_keyboard_102_en_us.kl:system/usr/keychars/usb_keyboard_102_en_us.kl
 
 # bin files for __DEVICE__
 PRODUCT_COPY_FILES += \\
