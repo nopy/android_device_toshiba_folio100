@@ -1,6 +1,6 @@
 # Camera Setup
-USE_CAMERA_STUB := true
-BOARD_USE_FROYO_LIBCAMERA := true
+USE_CAMERA_STUB := false
+#BOARD_USE_FROYO_LIBCAMERA := true
 BOARD_FIRST_CAMERA_FRONT_FACING := true
 
 # inherit from the proprietary version
