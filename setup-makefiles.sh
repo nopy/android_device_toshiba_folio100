@@ -38,7 +38,6 @@ DEVICE=betelgeuse
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/libaudio.so:obj/lib/libaudio.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/libaudiopolicy.so:obj/lib/libaudiopolicy.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/libcamera.so:obj/lib/libcamera.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/libnvrm_graphics.so:obj/lib/libnvrm_graphics.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/libnvddk_audiofx.so:obj/lib/libnvddk_audiofx.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/libnvodm_query.so:obj/lib/libnvodm_query.so \\
@@ -54,7 +53,7 @@ PRODUCT_COPY_FILES += \\
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/libaudio.so:system/lib/libaudio.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/libaudiopolicy.so:system/lib/libaudiopolicy.so \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/libcamera.so:system/lib/libcamera.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/libcamera.so:system/lib/libnvcamera.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/libcgdrv.so:system/lib/libcgdrv.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/gles2_sanity.so:system/lib/gles2_sanity.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/gles2_simplespin.so:system/lib/gles2_simplespin.so \\
@@ -150,10 +149,10 @@ PRODUCT_COPY_FILES += \\
 
 # Keylayout files for __DEVICE__
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/gpio-keys.kl:system/usr/keylayout/gpio-keys.kl \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/nvec_keyboard.kl:system/usr/keylayout/nvec_keyboard.kl \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/tegra-kbc.kl:system/usr/keylayout/tegra-kbc.kl \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/usb_keyboard_102_en_us.kl:system/usr/keylayout/usb_keyboard_102_en_us.kl
+    vendor/__VENDOR__/__DEVICE__/proprietary/gpio-keys.kl:system/usr/keychars/gpio-keys.kl \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/nvec_keyboard.kl:system/usr/keychars/nvec_keyboard.kl \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/tegra-kbc.kl:system/usr/keychars/tegra-kbc.kl \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/usb_keyboard_102_en_us.kl:system/usr/keychars/usb_keyboard_102_en_us.kl
 
 # bin files for __DEVICE__
 PRODUCT_COPY_FILES += \\

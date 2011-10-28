@@ -1,6 +1,6 @@
 # Camera Setup
-USE_CAMERA_STUB := true
-BOARD_USE_FROYO_LIBCAMERA := true
+USE_CAMERA_STUB := false
+#BOARD_USE_FROYO_LIBCAMERA := true
 BOARD_FIRST_CAMERA_FRONT_FACING := true
 
 # inherit from the proprietary version
@@ -95,3 +95,5 @@ BOARD_USES_HW_MEDIARECORDER := true
 
 # Use screencap to capture frame buffer for ddms
 BOARD_USE_SCREENCAP := true
+
+BOARD_CUSTOM_BLUEDROID := ../../../device/nvidia/betelgeuse/bluedroid/bluetooth.c
