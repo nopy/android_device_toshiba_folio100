@@ -1,5 +1,5 @@
 #
-# system.prop for betelgeuse
+# system.prop for folio100
 #
 # density in DPI of the LCD of this board. This is used to scale the UI
 # appropriately. If this property is not defined, the default value is 160 dpi. 

@@ -1,16 +1,16 @@
 edit vendor/cyanogen/products/AndroidProducts.mk amd add:
-$(LOCAL_DIR)/cyanogen_betelgeuse.mk
+$(LOCAL_DIR)/cyanogen_folio100.mk
 
 edit vendor/cyanogen/vendorsetup.sh and add:
-add_lunch_combo cyanogen_betelgeuse-eng
+add_lunch_combo cyanogen_folio100-eng
 
 add new file:
 
-vendor/cyanogen/products/cyanogen_betelgeuse.mk
+vendor/cyanogen/products/cyanogen_folio100.mk
 
 contents:
 ----
-$(call inherit-product, device/nvidia/betelgeuse/device_betelgeuse.mk)
+$(call inherit-product, device/toshiba/folio100/device_folio100.mk)
 
 # Inherit some common cyanogenmod stuff.
 $(call inherit-product, vendor/cyanogen/products/common_full.mk)
@@ -18,29 +18,29 @@ $(call inherit-product, vendor/cyanogen/products/common_full.mk)
 #
 # Setup device specific product configuration.
 #
-PRODUCT_NAME := cyanogen_betelgeuse
-PRODUCT_BRAND := nvidia
-PRODUCT_DEVICE := betelgeuse
+PRODUCT_NAME := cyanogen_folio100
+PRODUCT_BRAND := toshiba
+PRODUCT_DEVICE := folio100
 PRODUCT_MODEL := folio 100
 PRODUCT_MANUFACTURER := pegatron
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=betelgeuse BUILD_ID=GRI40 BUILD_DISPLAY_ID=GRI40 BUILD_FINGERPRINT=google/passion/passion:2.3.3/GRI40/102588:user/release-keys PRIVATE_BUILD_DESC="passion-user 2.3.3 GRI40 102588 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=folio100 BUILD_ID=GRI40 BUILD_DISPLAY_ID=GRI40 BUILD_FINGERPRINT=google/passion/passion:2.3.3/GRI40/102588:user/release-keys PRIVATE_BUILD_DESC="passion-user 2.3.3 GRI40 102588 release-keys"
 
 # Extra overlay
-PRODUCT_PACKAGE_OVERLAYS += vendor/cyanogen/overlay/betelgeuse
+PRODUCT_PACKAGE_OVERLAYS += vendor/cyanogen/overlay/folio100
 
 #
 # Set ro.modversion
 #
 ifdef CYANOGEN_NIGHTLY
     PRODUCT_PROPERTY_OVERRIDES += \
-        ro.modversion=CyanogenMod-7-$(shell date +%m%d%Y)-NIGHTLY-Betelgeuse
+        ro.modversion=CyanogenMod-7-$(shell date +%m%d%Y)-NIGHTLY-Folio100
 else
     ifdef CYANOGEN_RELEASE
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=CyanogenMod-7.0.0-RC2-Betelgeuse
+            ro.modversion=CyanogenMod-7.0.0-RC2-Folio100
     else
         PRODUCT_PROPERTY_OVERRIDES += \
-            ro.modversion=CyanogenMod-7.0.0-RC2-Betelgeuse-KANG
+            ro.modversion=CyanogenMod-7.0.0-RC2-Folio100-KANG
     endif
 endif
 

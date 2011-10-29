@@ -4,7 +4,7 @@ USE_CAMERA_STUB := false
 BOARD_FIRST_CAMERA_FRONT_FACING := true
 
 # inherit from the proprietary version
--include vendor/nvidia/betelgeuse/BoardConfigVendor.mk
+-include vendor/toshiba/folio100/BoardConfigVendor.mk
 
 TARGET_BOARD_PLATFORM := tegra
 TARGET_CPU_ABI := armeabi-v7a
@@ -17,7 +17,7 @@ TARGET_HAVE_TEGRA_ERRATA_657451 := true
 TARGET_SENSORS_NO_OPEN_CHECK:=true
 
 TARGET_NO_BOOTLOADER := true
-TARGET_BOOTLOADER_BOARD_NAME := betelgeuse
+TARGET_BOOTLOADER_BOARD_NAME := folio100
 
 # Modem
 TARGET_NO_RADIOIMAGE := true
@@ -26,7 +26,7 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 
 # custom recovery ui
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/nvidia/betelgeuse/recovery/recovery_ui.c
+BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/toshiba/folio100/recovery/recovery_ui.c
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
@@ -41,10 +41,10 @@ WIFI_DRIVER_MODULE_NAME     := "usbtest"
 BOARD_HAVE_BLUETOOTH := true
 #BOARD_HAVE_BLUETOOTH_CSR := true
 
-#BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=ttyS0,115200n8 usbcore.old_scheme_first=1 cpuid=200102 devicetype=1002 btmac=9c5ed6131a00 tegraboot=nand mtdparts=tegra_nand:16384K@12032K(misc),16384K@62208K(recovery),16384K@79104K(boot),204800K@96000K(system),222464K@301312K(cache),4096K@7424K(bootbmp),32768K@28928K(logodata) androidboot.hardware=betelgeuse
+#BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=ttyS0,115200n8 usbcore.old_scheme_first=1 cpuid=200102 devicetype=1002 btmac=9c5ed6131a00 tegraboot=nand mtdparts=tegra_nand:16384K@12032K(misc),16384K@62208K(recovery),16384K@79104K(boot),204800K@96000K(system),222464K@301312K(cache),4096K@7424K(bootbmp),32768K@28928K(logodata) androidboot.hardware=folio100
 #BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=ttyUSB0,115200n8 usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR
-#BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=tty0,115200n8 usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR androidboot.hardware=betelgeuse androidboot.console=tty0 init=/init
-BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb no_console_suspend=1 console=null usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR androidboot.hardware=betelgeuse init=/init quiet
+#BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=tty0,115200n8 usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR androidboot.hardware=folio100 androidboot.console=tty0 init=/init
+BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb no_console_suspend=1 console=null usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR androidboot.hardware=folio100 init=/init quiet
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_PAGE_SIZE := 0x00000800
 
@@ -59,7 +59,7 @@ BOARD_USES_FROYO_AUDIOPOLICY := true
 
 TARGET_LIBAGL_USE_GRALLOC_COPYBITS := true
 BOARD_NO_RGBX_8888 := true
-BOARD_EGL_CFG := device/nvidia/betelgeuse/egl.cfg
+BOARD_EGL_CFG := device/toshiba/folio100/egl.cfg
 
 # Enables Old Sensor Compatibility Seems To Cause CPU Lockup, New kernel may be required
 TARGET_USES_OLD_LIBSENSORS_HAL:=true
@@ -77,7 +77,7 @@ BOARD_HAS_NO_MISC_PARTITION := true
 # Indicate that the board has an Internal SD Card
 #BOARD_HAS_SDCARD_INTERNAL := true
 
-TARGET_PREBUILT_KERNEL := device/nvidia/betelgeuse/kernel
+TARGET_PREBUILT_KERNEL := device/toshiba/folio100/kernel
 
 BOARD_DATA_DEVICE := /dev/block/mmcblk0p6
 BOARD_DATA_FILESYSTEM := ext4
@@ -96,4 +96,4 @@ BOARD_USES_HW_MEDIARECORDER := true
 # Use screencap to capture frame buffer for ddms
 BOARD_USE_SCREENCAP := true
 
-BOARD_CUSTOM_BLUEDROID := ../../../device/nvidia/betelgeuse/bluedroid/bluetooth.c
+BOARD_CUSTOM_BLUEDROID := ../../../device/toshiba/folio100/bluedroid/bluetooth.c
