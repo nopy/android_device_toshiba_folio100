@@ -1,5 +1,5 @@
 # Camera Setup
-USE_CAMERA_STUB := false
+USE_CAMERA_STUB := true
 #BOARD_USE_FROYO_LIBCAMERA := true
 BOARD_FIRST_CAMERA_FRONT_FACING := true
 
@@ -18,6 +18,12 @@ TARGET_SENSORS_NO_OPEN_CHECK:=true
 
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := folio100
+
+ARCH_ARM_HAVE_TLS_REGISTER := true
+
+#BOARD_USES_HGL := true
+#BOARD_USES_OVERLAY := true
+USE_OPENGL_RENDERER := true
 
 # Modem
 TARGET_NO_RADIOIMAGE := true
@@ -44,7 +50,7 @@ BOARD_HAVE_BLUETOOTH := true
 #BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=ttyS0,115200n8 usbcore.old_scheme_first=1 cpuid=200102 devicetype=1002 btmac=9c5ed6131a00 tegraboot=nand mtdparts=tegra_nand:16384K@12032K(misc),16384K@62208K(recovery),16384K@79104K(boot),204800K@96000K(system),222464K@301312K(cache),4096K@7424K(bootbmp),32768K@28928K(logodata) androidboot.hardware=folio100
 #BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=ttyUSB0,115200n8 usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR
 #BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=tty0,115200n8 usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR androidboot.hardware=folio100 androidboot.console=tty0 init=/init
-BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb no_console_suspend=1 console=null usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR androidboot.hardware=folio100 init=/init quiet
+BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb no_console_suspend=1 console=tty0,115200n8 usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR androidboot.hardware=folio100 androidboot.console=tty0 init=/init quiet
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_PAGE_SIZE := 0x00000800
 
@@ -53,7 +59,6 @@ BOARD_PREBUILT_LIBAUDIO := true
 
 # Use dirty hack to allow froyo libaudio
 BOARD_USE_KINETO_COMPATIBILITY := true
-BOARD_USES_FROYO_AUDIOPOLICY := true
 
 
 TARGET_OTA_ASSERT_DEVICE := folio100,betelgeuse
