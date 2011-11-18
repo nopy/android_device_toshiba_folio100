@@ -4,6 +4,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 PRODUCT_NAME := full_folio100
 PRODUCT_DEVICE := folio100
 
+PRODUCT_CHARACTERISTICS := tablet
+
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapsize=32m \
     ro.com.google.locationfeatures=1 \
