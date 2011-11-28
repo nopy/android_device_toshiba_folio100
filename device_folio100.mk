@@ -94,6 +94,7 @@ PRODUCT_PACKAGES += \
     screencap \
     abtfilt \
     wmiconfig \
+    audio.primary.tegra \
     hostap
 
 # Use MDPI artwork
