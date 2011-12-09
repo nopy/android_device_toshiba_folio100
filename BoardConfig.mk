@@ -23,7 +23,7 @@ ARCH_ARM_HAVE_TLS_REGISTER := true
 
 #BOARD_USES_HGL := true
 #BOARD_USES_OVERLAY := true
-USE_OPENGL_RENDERER := true
+#USE_OPENGL_RENDERER := true
 
 BOARD_USES_AUDIO_LEGACY := true
 
@@ -34,12 +34,18 @@ TARGET_NO_RADIOIMAGE := true
 BOARD_USE_USB_MASS_STORAGE_SWITCH := true
 
 # custom recovery ui
-BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/toshiba/folio100/recovery/recovery_ui.c
+#BOARD_CUSTOM_RECOVERY_KEYMAPPING := ../../device/toshiba/folio100/recovery/recovery_ui.c
+
+COMMON_GLOBAL_CFLAGS += -DBOARD_GL_OES_EGL_IMG_EXTERNAL_HACK
+#BOARD_EGL_GRALLOC_USAGE_FILTER = GRALLOC_USAGE_HW_COMPOSER
 
 # Wifi related defines
 BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-WPA_SUPPLICANT_VERSION      := VER_0_6_X
-BOARD_WLAN_DEVICE           := wlan0
+#BOARD_WPA_SUPPLICANT_DRIVER := ATHEROS
+WPA_SUPPLICANT_VERSION      := VER_0_8_X
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
+BOARD_HOSTAPD_DRIVER := WEXT
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_wext
 # Let us use a fake driver as ar6000 may not be unloaded - it wont work afterwards
 #WIFI_DRIVER_MODULE_PATH     := "/system/wifi/ar6000.ko"
 #WIFI_DRIVER_MODULE_NAME     := "ar6000"
@@ -51,8 +57,7 @@ BOARD_HAVE_BLUETOOTH := true
 
 #BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=ttyS0,115200n8 usbcore.old_scheme_first=1 cpuid=200102 devicetype=1002 btmac=9c5ed6131a00 tegraboot=nand mtdparts=tegra_nand:16384K@12032K(misc),16384K@62208K(recovery),16384K@79104K(boot),204800K@96000K(system),222464K@301312K(cache),4096K@7424K(bootbmp),32768K@28928K(logodata) androidboot.hardware=folio100
 #BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=ttyUSB0,115200n8 usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR
-#BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=tty0,115200n8 usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR androidboot.hardware=folio100 androidboot.console=tty0 init=/init
-BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb no_console_suspend=1 console=tty0,115200n8 usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR androidboot.hardware=folio100 androidboot.console=tty0 init=/init quiet
+BOARD_KERNEL_CMDLINE := mem=448M@0M nvmem=64M@448M vmalloc=192M video=tegrafb console=tty0,115200n8 usbcore.old_scheme_first=1 tegraboot=sdmmc tegrapart=recovery:122000:a00:800,linux:a0e00:1000:800,loader:300:400:800,mbr:700:200:800,system:900:20000:800,cache:20900:80000:800,misc:a0900:400:800,userdata:a1f00:80000:800 boardtype=PR androidboot.hardware=folio100 androidboot.console=tty0 init=/init
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_PAGE_SIZE := 0x00000800
 
@@ -69,7 +74,7 @@ BOARD_NO_RGBX_8888 := true
 BOARD_EGL_CFG := device/toshiba/folio100/egl.cfg
 
 # Enables Old Sensor Compatibility Seems To Cause CPU Lockup, New kernel may be required
-TARGET_USES_OLD_LIBSENSORS_HAL:=true
+TARGET_USES_OLD_LIBSENSORS_HAL := true
 
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
@@ -104,3 +109,5 @@ BOARD_USES_HW_MEDIARECORDER := true
 BOARD_USE_SCREENCAP := true
 
 BOARD_CUSTOM_BLUEDROID := ../../../device/toshiba/folio100/bluedroid/bluetooth.c
+
+COMMON_GLOBAL_CFLAGS += -DMISSING_EGL_EXTERNAL_IMAGE -DMISSING_EGL_PIXEL_FORMAT_YV12 -DMISSING_GRALLOC_BUFFERS
