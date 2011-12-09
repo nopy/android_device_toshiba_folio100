@@ -7,10 +7,31 @@ PRODUCT_DEVICE := folio100
 PRODUCT_CHARACTERISTICS := tablet
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapsize=32m \
+    dalvik.vm.heapsize=128m \
     ro.com.google.locationfeatures=1 \
     ro.com.google.networklocation=1 \
-    dalvik.vm.dexopt-data-only=1
+    dalvik.vm.dexopt-data-only=1 \
+    ro.sf.lcd_density=160 \
+    wifi.interface=wlan0 \
+    wifi.supplicant_scan_interval=45 \
+    ro.opengles.version=131072 \
+    dalvik.vm.dexopt-flags=m=y,u=n \
+    ro.telephony.default_network=0 \
+    ro.kernel.android.checkjni=0
+
+# Media properties ( from stock )
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.media.dec.vid.wmv.enabled=1 \
+    ro.media.dec.aud.wma.enabled=1 \
+    ro.media.enc.hprof.file.format=3gp \
+    ro.media.enc.hprof.aud.hz=44100 \
+    ro.media.enc.hprof.aud.ch=2 \
+    ro.media.enc.hprof.codec.aud=aac \
+    ro.media.enc.hprof.aud.bps=128000 \
+    media.stagefright.enable-player=true \
+    media.stagefright.enable-meta=true \
+    media.stagefright.enable-scan=true \
+    media.stagefright.enable-http=true 
 
 # Get a proper init file
 PRODUCT_COPY_FILES += \
@@ -76,12 +97,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/ath6k/AR6003/hw2.0/athtcmd_ram.bin:/system/wifi/ath6k/AR6003/hw2.0/athtcmd_ram.bin \
     $(LOCAL_PATH)/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin:/system/wifi/ath6k/AR6003/hw2.0/bdata.SD31.bin \
     $(LOCAL_PATH)/wifi/ath6k/AR6003/hw2.0/bdata.WB31.bin:/system/wifi/ath6k/AR6003/hw2.0/bdata.WB31.bin \
-    $(LOCAL_PATH)/wifi/libhuawei-ril.so:/system/lib/libhuawei-ril.so \
-    $(LOCAL_PATH)/ramdisk/default.prop:root/default.prop 
+    $(LOCAL_PATH)/wifi/libhuawei-ril.so:/system/lib/libhuawei-ril.so
 
 $(call inherit-product-if-exists, vendor/toshiba/folio100/folio100-vendor.mk)
 
 DEVICE_PACKAGE_OVERLAYS += device/toshiba/folio100/overlay
+
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.secure=0
+
+ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
+
 
 # Include packages
 PRODUCT_PACKAGES += \
@@ -95,6 +121,7 @@ PRODUCT_PACKAGES += \
     abtfilt \
     wmiconfig \
     audio.primary.tegra \
+    liba2dp \
     hostap
 
 # Use MDPI artwork
