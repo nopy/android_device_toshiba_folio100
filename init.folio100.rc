@@ -49,9 +49,6 @@ on init
     # 5.0 %
     write /dev/cpuctl/bg_non_interactive/cpu.shares 52
 
-sysclktz 0
-
-
 on fs
 # Mount file systems
     mkdir /system
@@ -73,6 +70,10 @@ on fs
     chown root log /data/dontpanic
     chmod 0750 /data/dontpanic
 
+    mkdir /mnt/external_sd
+    mkdir /mnt/usb_storage
+    mkdir /mnt/sdcard
+
     # Collect apanic data, free resources and re-arm trigger
     copy /proc/apanic_console /data/dontpanic/apanic_console
     chown root log /data/dontpanic/apanic_console
@@ -90,12 +91,6 @@ on fs
 
 on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
-
-# create mount points for sdcard and usbflash
-    mount vfat /dev/block/mmcblk0p8 /mnt/sdcard rw wait noatime nosuid nodev
-    mkdir /mnt/external_sd
-    mkdir /mnt/usb_storage
-    exec /system/xbin/umount /mnt/sdcard
 
 # create dir for Huawei 3G
     mkdir /data/ppp
