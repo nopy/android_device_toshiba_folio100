@@ -93,8 +93,8 @@ on boot
 
 # create mount points for sdcard and usbflash
     mount vfat /dev/block/mmcblk0p8 /mnt/sdcard rw wait noatime nosuid nodev
-    mkdir /mnt/sdcard/sdcard-disk0
-    mkdir /mnt/sdcard/usb-disk0
+    mkdir /mnt/external_sd
+    mkdir /mnt/usb_storage
     exec /system/xbin/umount /mnt/sdcard
 
 # create dir for Huawei 3G
