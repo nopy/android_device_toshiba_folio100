@@ -36,7 +36,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Get a proper init file
 PRODUCT_COPY_FILES += \
     device/toshiba/folio100/init.folio100.rc:root/init.folio100.rc \
-    device/toshiba/folio100/ueventd.tegra.rc:root/ueventd.tegra.rc
+    device/toshiba/folio100/ueventd.folio100.rc:root/ueventd.folio100.rc
 
 # Some files for 3G
 PRODUCT_COPY_FILES += \
