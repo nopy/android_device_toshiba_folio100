@@ -324,16 +324,10 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dar6000 -iwlan0 -c/data/misc/
     oneshot
     disabled
 
-service dhcpcd_wlan0 /system/bin/dhcpcd -dd -f /system/etc/dhcpcd/dhcpcd.conf wlan0
+service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
     class main
     disabled
     oneshot
-
-#service dhcpcd /system/bin/dhcpcd -dd -f /system/etc/dhcpcd/dhcpcd.conf wlan0
-#    user root
-#    group dhcp inet
-#    oneshot
-#    disabled
 
 #service abtfilt /system/bin/abtfilt -c -d -z -n
 #    user root
