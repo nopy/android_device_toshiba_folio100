@@ -7,7 +7,7 @@ PRODUCT_DEVICE := folio100
 PRODUCT_CHARACTERISTICS := tablet
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapsize=128m \
+    dalvik.vm.heapsize=64m \
     ro.com.google.locationfeatures=1 \
     ro.com.google.networklocation=1 \
     dalvik.vm.dexopt-data-only=1 \
@@ -158,3 +158,4 @@ endif
 #$(call inherit-product, build/target/product/full.mk)
 # Added all the kernel modules to be copyed
 $(call inherit-product-if-exists, device/toshiba/folio100/KernelModules.mk)
+    
