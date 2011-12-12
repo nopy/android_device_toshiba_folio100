@@ -122,6 +122,7 @@ PRODUCT_PACKAGES += \
     wmiconfig \
     audio.primary.tegra \
     liba2dp \
+    hwprops \
     hostap
 
 # Use MDPI artwork

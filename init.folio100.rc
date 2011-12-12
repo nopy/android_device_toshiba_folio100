@@ -49,6 +49,9 @@ on init
     # 5.0 %
     write /dev/cpuctl/bg_non_interactive/cpu.shares 52
 
+on early-init
+    start hwprops
+
 on fs
 # Mount file systems
     mkdir /system
@@ -398,5 +401,9 @@ service pbap /system/bin/sdptool add --channel=19 PBAP
     class main
     user bluetooth
     group bluetooth net_bt_admin
+    disabled
+    oneshot
+
+service hwprops /sbin/hwprops
     disabled
     oneshot
