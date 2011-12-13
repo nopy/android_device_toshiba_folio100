@@ -13,7 +13,6 @@
 # limitations under the License.
 
 
-ifneq ($(filter p990 p999, $(TARGET_BOOTLOADER_BOARD_NAME)),)
 
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
@@ -31,4 +30,3 @@ LOCAL_FORCE_STATIC_EXECUTABLE := true
 
 include $(BUILD_EXECUTABLE)
 
-endif
