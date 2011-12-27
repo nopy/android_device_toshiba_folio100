@@ -327,7 +327,7 @@ service wpa_supplicant /system/bin/wpa_supplicant -Dar6000 -iwlan0 -c/data/misc/
     oneshot
     disabled
 
-service dhcpcd_wlan0 /system/bin/dhcpcd -ABKL
+service dhcpcd_wlan0 /system/bin/dhcpcd -BK
     class main
     disabled
     oneshot
