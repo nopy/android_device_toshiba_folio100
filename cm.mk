@@ -1,6 +1,6 @@
-$(call inherit-product, device/toshiba/folio100/device_folio100.mk)
+$(call inherit-product, device/toshiba/folio100/full_folio100.mk)
 
-PRODUCT_RELEASE_NAME := Folio100
+PRODUCT_RELEASE_NAME := folio100
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 

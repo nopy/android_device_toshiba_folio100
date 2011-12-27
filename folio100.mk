@@ -1,29 +1,26 @@
-$(call inherit-product, build/target/product/full_base.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-
-PRODUCT_NAME := full_folio100
-PRODUCT_DEVICE := folio100
-
-PRODUCT_CHARACTERISTICS := tablet
-
-PRODUCT_PROPERTY_OVERRIDES := \
-    net.dns1=8.8.8.8 \
-    net.dns2=8.8.4.4
-
+#
+# Copyright (C) 2011 The Android Open-Source Project
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
 
 PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     net.qtaguid_enabled=false \
-    ro.com.google.locationfeatures=1 \
-    ro.com.google.networklocation=1 \
-    dalvik.vm.dexopt-data-only=1 \
-    ro.sf.lcd_density=160 \
     wifi.interface=wlan0 \
     keyguard.no_require_sim=true \
     wifi.supplicant_scan_interval=45 \
     ro.opengles.version=131072 \
-    dalvik.vm.dexopt-flags=m=y,u=n \
-    ro.telephony.default_network=0 \
     ro.kernel.android.checkjni=0
 
 # Media properties ( from stock )
@@ -50,26 +47,22 @@ PRODUCT_COPY_FILES += \
     device/toshiba/folio100/etc/ppp/ip-up:system/etc/ppp/ip-up \
     device/toshiba/folio100/etc/ppp/ip-down:system/etc/ppp/ip-down
 
-# Place wifi files
-#PRODUCT_COPY_FILES += \
-#    device/toshiba/folio100/wifi/wpa_supplicant.conf:/system/etc/wifi/wpa_supplicant.conf \
-#    device/toshiba/folio100/wifi/dhcpcd.conf:/system/etc/dhcpcd/dhcpcd.conf
-
-    #device/toshiba/folio100/wifi/bcm4329.ko:system/lib/hw/wlan/bcm4329.ko \
 # Place permission files
 PRODUCT_COPY_FILES += \
-    frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+    frameworks/base/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml \
+    frameworks/base/data/etc/android.hardware.camera.xml:system/etc/permissions/android.hardware.camera.xml \
+    frameworks/base/data/etc/android.hardware.location.xml:system/etc/permissions/android.hardware.location.xml \
     frameworks/base/data/etc/android.hardware.camera.front.xml:system/etc/permissions/android.hardware.camera.front.xml \
-    frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml \
-    frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
     frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+    frameworks/base/data/etc/android.hardware.wifi.direct.xml:system/etc/permissions/android.hardware.wifi.direct.xml \
     frameworks/base/data/etc/android.hardware.sensor.proximity.xml:system/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.jazzhand.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.jazzhand.xml \
-    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-    frameworks/base/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml \
-    frameworks/base/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+    frameworks/base/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
+    frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml 
 
+# we have enough storage to hold precise GC data
+PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Keychars
 # Keylayout
@@ -115,6 +108,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
 
+PRODUCT_CHARACTERISTICS := tablet
 
 # Include packages
 PRODUCT_PACKAGES += \
@@ -132,8 +126,10 @@ PRODUCT_PACKAGES += \
     hwprops \
     hostap
 
-# Use MDPI artwork
-PRODUCT_LOCALES += mdpi
+# Filesystem management tools
+PRODUCT_PACKAGES += \
+    make_ext4fs
+
 
 # VOLD
 PRODUCT_COPY_FILES += \
@@ -163,9 +159,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 endif
 
-#$(call inherit-product, build/target/product/full.mk)
-# Added all the kernel modules to be copyed
-$(call inherit-product-if-exists, device/toshiba/folio100/KernelModules.mk)
-    
+$(call inherit-product-if-exists, vendor/toshiba/folio100/folio100-vendor.mk)
 $(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
 
+ 
