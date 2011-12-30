@@ -81,11 +81,8 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/nvodm_touch.idc:system/usr/idc/nvodm_touch.idc 
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/ar6000.ko:system/lib/hw/wlan/ar6000.ko \
-    $(LOCAL_PATH)/wifi/wpa_supplicant:system/wifi/wpa_supplicant \
     $(LOCAL_PATH)/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/wifi/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
-    $(LOCAL_PATH)/wifi/usbtest.ko:system/wifi/usbtest.ko \
     $(LOCAL_PATH)/wifi/ar3k/30101/PS_ASIC.pst:/system/wifi/ar3k/30101/PS_ASIC.pst \
     $(LOCAL_PATH)/wifi/ar3k/30101/RamPatch.txt:/system/wifi/ar3k/30101/RamPatch.txt \
     $(LOCAL_PATH)/wifi/ar3k/30101coex/PS_ASIC.pst:/system/wifi/ar3k/30101coex/PS_ASIC.pst \
@@ -113,7 +110,7 @@ PRODUCT_CHARACTERISTICS := tablet
 # Include packages
 PRODUCT_PACKAGES += \
     librs_jni \
-    gralloc.default \
+    SpareParts \
     gralloc.tegra \
     overlay.tegra \
     lights.tegra \
@@ -134,10 +131,6 @@ PRODUCT_PACKAGES += \
 # VOLD
 PRODUCT_COPY_FILES += \
         $(LOCAL_PATH)/etc/vold.folio100.fstab:system/etc/vold.fstab
-
-# APNs
-#PRODUCT_COPY_FILES += \
-#	vendor/cyanogen/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
 
 # Media Profile
 PRODUCT_COPY_FILES += \
