@@ -87,7 +87,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/ar3k/30101/RamPatch.txt:/system/wifi/ar3k/30101/RamPatch.txt \
     $(LOCAL_PATH)/wifi/ar3k/30101coex/PS_ASIC.pst:/system/wifi/ar3k/30101coex/PS_ASIC.pst \
     $(LOCAL_PATH)/wifi/ar3k/30101coex/RamPatch.txt:/system/wifi/ar3k/30101coex/RamPatch.txt \
-    $(LOCAL_PATH)/wifi/ar6000.ko:/system/wifi/ar6000.ko \
     $(LOCAL_PATH)/wifi/ath6k/AR6003/hw2.0/otp.bin.z77:/system/wifi/ath6k/AR6003/hw2.0/otp.bin.z77 \
     $(LOCAL_PATH)/wifi/ath6k/AR6003/hw2.0/data.patch.bin:/system/wifi/ath6k/AR6003/hw2.0/data.patch.bin \
     $(LOCAL_PATH)/wifi/ath6k/AR6003/hw2.0/athwlan.bin.z77:/system/wifi/ath6k/AR6003/hw2.0/athwlan.bin.z77 \
@@ -154,5 +153,7 @@ endif
 
 $(call inherit-product-if-exists, vendor/toshiba/folio100/folio100-vendor.mk)
 $(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
+$(call inherit-product-if-exists, hardware/AR6kSDK.3.0/host/device-ath6k.mk)
+
 
  
