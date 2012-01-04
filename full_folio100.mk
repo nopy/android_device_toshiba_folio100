@@ -40,6 +40,7 @@ $(call inherit-product-if-exists, vendor/toshiba/folio100/folio100-vendor.mk)
 
 PRODUCT_NAME := full_folio100
 PRODUCT_DEVICE := folio100
-PRODUCT_BRAND := Toshiba
-PRODUCT_MODEL := Full AOSP on folio100
+PRODUCT_BRAND := toshiba
+PRODUCT_MODEL := Folio100
+PRODUCT_MANUFACTURER := toshiba
 

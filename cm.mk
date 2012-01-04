@@ -1,13 +1,19 @@
 $(call inherit-product, device/toshiba/folio100/full_folio100.mk)
 
-PRODUCT_RELEASE_NAME := folio100
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/gsm.mk)
 
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=soju BUILD_ID=GWK74 BUILD_FINGERPRINT=google/soju/crespo:2.3.7/GWK74/185293:user/release-keys PRIVATE_BUILD_DESC="soju-user 2.3.7 GWK74 185293 release-keys" BUILD_NUMBER=185293
+#
+# Setup device specific product configuration.
+#
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=GT-P7510 BUILD_ID=HTJ85B BUILD_FINGERPRINT=samsung/GT-P7510/GT-P7510:3.2/HTJ85B/UEKMM:user/release-keys PRIVATE_BUILD_DESC="GT-P7510-user 3.2 HTJ85B UEKMM release-keys"
 
 PRODUCT_NAME := cm_folio100
 PRODUCT_DEVICE := folio100
+PRODUCT_MODEL := folio100
+PRODUCT_BRAND := toshiba
+PRODUCT_MANUFACTURER := toshiba
+PRODUCT_RELEASE_NAME := folio100
