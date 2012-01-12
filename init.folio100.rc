@@ -23,6 +23,7 @@ on fs
     mount ext4 /dev/block/mmcblk0p6 /data wait noatime nosuid nodev barrier=1 noauto_da_alloc
     mount ext4 /dev/block/mmcblk0p2 /cache wait noatime nosuid nodev barrier=1
     insmod /system/wifi/ar6000.ko
+    import /init.folio100.usb.rc
 
 on post-fs-data
     mkdir /data/misc/wifi 0770 wifi wifi
@@ -109,8 +110,12 @@ on boot
     chmod 666 /dev/i2c-1
     chmod 666 /dev/i2c-3
 
+# MTP permission
+    chmod 0660 /dev/usb_mtp_gadget
+    chown system system /dev/usb_mtp_gadget
 
-
+# Always start adbd on userdebug and eng builds
+    setprop sys.usb.config adb
 
 # gps permissions
     chmod 0777 /dev/ttyHS1

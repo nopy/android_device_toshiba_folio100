@@ -79,7 +79,4 @@ based on the hardware -->
         <item>"7,1"</item>
     </string-array>
 
-<!-- Use legacy USB device manager. -->
-<bool name="config_usesLegacyUsbDeviceManager">true</bool>
-
 </resources>

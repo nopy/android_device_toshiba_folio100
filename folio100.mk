@@ -21,7 +21,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     keyguard.no_require_sim=true \
     wifi.supplicant_scan_interval=45 \
     ro.opengles.version=131072 \
-    ro.kernel.android.checkjni=0
+    ro.kernel.android.checkjni=0 
 
 # Media properties ( from stock )
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -40,6 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Get a proper init file
 PRODUCT_COPY_FILES += \
     device/toshiba/folio100/init.folio100.rc:root/init.folio100.rc \
+    device/toshiba/folio100/init.folio100.usb.rc:root/init.folio100.usb.rc \
     device/toshiba/folio100/ueventd.folio100.rc:root/ueventd.folio100.rc
 
 # Some files for 3G
@@ -152,7 +153,7 @@ PRODUCT_COPY_FILES += \
 endif
 
 $(call inherit-product-if-exists, vendor/toshiba/folio100/folio100-vendor.mk)
-$(call inherit-product, frameworks/base/build/tablet-dalvik-heap.mk)
+$(call inherit-product, frameworks/base/build/phone-hdpi-512-dalvik-heap.mk)
 $(call inherit-product-if-exists, hardware/AR6kSDK.3.0/host/device-ath6k.mk)
 
 
